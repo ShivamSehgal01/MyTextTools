@@ -1,14 +1,15 @@
 // import logo from './logo.svg';
 import "./App.css";
-
+import About from "./components/About";
 import Navbar from "./components/Navbar";
-import TextForm from "./components/TextForm";
+// import TextForm from "./components/TextForm";
 
 function App() {
   return (
     <>
       <Navbar heading="TextUtils" />
-      <TextForm heading="Enter Your Text Here" />
+      {/* <TextForm heading="Enter Your Text Here" /> */}
+      <About />
     </>
   );
 }
