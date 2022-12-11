@@ -5,7 +5,7 @@ export default function Textform(props) {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
-    props.showAlert("Converted to UpperCase", "success");
+    props.showAlert("Converted to UpperCase", "dark");
     // console.log(newText);
   };
 
@@ -13,7 +13,7 @@ export default function Textform(props) {
   const handleloClick = () => {
     let newText = text.toLocaleLowerCase();
     setText(newText);
-    props.showAlert("Converted to LowerCase", "success");
+    props.showAlert("Converted to LowerCase", "dark");
 
     // console.log(newText);
   };
@@ -22,7 +22,7 @@ export default function Textform(props) {
   function handleClrClick() {
     let newText = "";
     setText(newText);
-    props.showAlert("Text Cleared", "success");
+    props.showAlert("Text Cleared", "dark");
   }
 
   // Copy Text
@@ -30,14 +30,14 @@ export default function Textform(props) {
     let text = document.getElementById("mybox");
     text.select();
     navigator.clipboard.writeText(text.value);
-    props.showAlert("Copied to Clipboard", "success");
+    props.showAlert("Copied to Clipboard", "dark");
   };
 
   // Paste Text
   const handlePaste = () => {
     let paste = document.getElementById("mybox");
     navigator.clipboard.readText().then((text) => (paste.innerText = text));
-    props.showAlert("Text Pasted succesfully", "success");
+    props.showAlert("Text Pasted succesfully", "dark");
   };
 
   // Remove Extra Spaces
@@ -45,7 +45,7 @@ export default function Textform(props) {
     let newT = text;
     newT = text.split(/[ ]+/);
     setText(newT.join(" "));
-    props.showAlert("Extra spaces removed", "success");
+    props.showAlert("Extra spaces removed", "dark");
   };
 
   // Change Color
@@ -57,7 +57,7 @@ export default function Textform(props) {
     } else {
       box.style.color = "black";
     }
-    props.showAlert("Successfuly Chaneged text color", "success");
+    props.showAlert("Successfuly Chaneged text color", "dark");
   };
 
   // Handle Change

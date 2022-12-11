@@ -6,7 +6,8 @@ export default function Navbar(props) {
     <>
       <div>
         <nav
-          className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+          // className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+          className={`navbar navbar-expand-lg navbar-dark bg-dark`}>
           <a className="navbar-brand" href="/">
             {props.heading}
           </a>
@@ -34,6 +35,21 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
+
+            <div className="btn btn-info mx-1" onClick={props.changeColorInfo}>
+              {props.c1} Mode
+            </div>
+            <div
+              className="btn btn-success mx-1"
+              onClick={props.changeColorSuccess}>
+              {props.c2} Mode
+            </div>
+            <div
+              className="btn btn-secondary mx-1"
+              onClick={props.changeColorSecondary}>
+              {props.c3} Mode
+            </div>
+
             {/* <form className="form-inline my-2 my-lg-0">
               <input
                 className="form-control mr-sm-2"
