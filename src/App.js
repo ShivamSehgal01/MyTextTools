@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -12,8 +13,8 @@ function App() {
   const [alert, setAlert] = useState(null);
   // setAlert("hey");
   const [info, setInfo] = useState("ligth");
-  const [success, setsuccess] = useState("ligth");
-  const [secondary, setsecondary] = useState("ligth");
+  const [success, setSuccess] = useState("ligth");
+  const [secondary, setSecondary] = useState("ligth");
 
   const showAlert = (msg, type) => {
     setAlert({
@@ -51,38 +52,48 @@ function App() {
   };
   const changeColorSuccess = () => {
     if (success !== "success") {
-      setInfo("success");
+      setSuccess("success");
       document.body.style.backgroundColor = "#28a745";
       showAlert("Success Mode has been Enabled", "dark");
     }
   };
   const changeColorSecondary = () => {
     if (secondary !== "secondary") {
-      setInfo("secondary");
+      setSecondary("secondary");
       document.body.style.backgroundColor = "#6c757d";
       showAlert("Secondary Mode has been Enabled", "dark");
     }
   };
   return (
     <>
-      <Navbar
-        heading="TextUtils"
-        mode={mode}
-        toggleMode={toggleMode}
-        c1={"Info"}
-        c2={"Success"}
-        c3={"Secondary"}
-        changeColorInfo={changeColorInfo}
-        changeColorSuccess={changeColorSuccess}
-        changeColorSecondary={changeColorSecondary}
-      />
-      <Alert alert={alert} />
-      <TextForm
-        showAlert={showAlert}
-        heading="Enter Your Text Here"
-        mode={mode}
-      />
-      {/* <About /> */}
+      <Router>
+        <Navbar
+          heading="TextUtils"
+          mode={mode}
+          toggleMode={toggleMode}
+          c1={"Info"}
+          c2={"Success"}
+          c3={"Secondary"}
+          changeColorInfo={changeColorInfo}
+          changeColorSuccess={changeColorSuccess}
+          changeColorSecondary={changeColorSecondary}
+        />
+        <Alert alert={alert} />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <TextForm
+                showAlert={showAlert}
+                heading="Enter Your Text Here"
+                mode={mode}
+              />
+            }></Route>
+
+          <Route exact path="/about" element={<About />}></Route>
+        </Routes>
+      </Router>
     </>
   );
 }
