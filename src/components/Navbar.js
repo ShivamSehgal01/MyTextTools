@@ -5,7 +5,8 @@ export default function Navbar(props) {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav
+          className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
           <a className="navbar-brand" href="/">
             {props.heading}
           </a>
@@ -33,7 +34,7 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
+            {/* <form className="form-inline my-2 my-lg-0">
               <input
                 className="form-control mr-sm-2"
                 type="search"
@@ -42,10 +43,25 @@ export default function Navbar(props) {
               />
               <button
                 className="btn btn-outline-success my-2 my-sm-0"
-                type="submit">
-                Search
+                type="submit"
+                onClick={props.toggleMode}>
+                Disable {props.mode} Mode
               </button>
-            </form>
+            </form> */}
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                onClick={props.toggleMode}
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault">
+                Disable {props.mode} Mode
+              </label>
+            </div>
           </div>
         </nav>
       </div>

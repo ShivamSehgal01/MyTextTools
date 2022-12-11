@@ -69,7 +69,9 @@ export default function Textform(props) {
   //   setText("Hey New Text"); // Change State
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <div className="mb-3">
           <label htmlFor="mybox" className="form-label">
             <h3>{props.heading}</h3>
@@ -79,6 +81,10 @@ export default function Textform(props) {
             value={text}
             id="mybox"
             onChange={handleOnChange}
+            style={{
+              backgroundColor: props.mode === "dark" ? "black" : "white",
+              color: props.mode === "dark" ? "white" : "black",
+            }}
             rows="8"></textarea>
         </div>
 
@@ -89,6 +95,10 @@ export default function Textform(props) {
           id="changeColor"
           value={color}
           className="form-control mt-2 mb-3"
+          style={{
+            backgroundColor: props.mode === "dark" ? "black" : "white",
+            color: props.mode === "dark" ? "white" : "black",
+          }}
           onChange={handleOnColor}
         />
 
@@ -115,7 +125,9 @@ export default function Textform(props) {
         </div>
       </div>
 
-      <div className="container my-4">
+      <div
+        className="container my-4"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <h1>Your Text Summary</h1>
         <p>
           Your Word has {text.length} Character & {text.split(" ").length} Words

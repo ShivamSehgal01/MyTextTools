@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function About() {
   const toggleDarkMode = () => {
-    if (color.color == "white") {
+    if (color.color === "white") {
       console.log("Disable dark Mode");
       setColor({
         backgroundColor: "white",
