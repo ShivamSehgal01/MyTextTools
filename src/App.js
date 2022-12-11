@@ -32,11 +32,13 @@ function App() {
       document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
       showAlert("Dark Mode has been Enabled", "dark");
+      document.title = "TextUtils - Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       showAlert("Light Mode has been Enabled", "dark");
+      document.title = "TextUtils - Play With Your Text";
     }
   };
 
