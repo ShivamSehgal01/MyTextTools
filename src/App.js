@@ -1,11 +1,11 @@
 // import logo from './logo.svg';
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -66,21 +66,21 @@ function App() {
   };
   return (
     <>
-      <Router>
-        <Navbar
-          heading="TextUtils"
-          mode={mode}
-          toggleMode={toggleMode}
-          c1={"Info"}
-          c2={"Success"}
-          c3={"Secondary"}
-          changeColorInfo={changeColorInfo}
-          changeColorSuccess={changeColorSuccess}
-          changeColorSecondary={changeColorSecondary}
-        />
-        <Alert alert={alert} />
-        <Routes>
-          <Route
+      {/* <Router> */}
+      <Navbar
+        heading="TextUtils"
+        mode={mode}
+        toggleMode={toggleMode}
+        c1={"Info"}
+        c2={"Success"}
+        c3={"Secondary"}
+        changeColorInfo={changeColorInfo}
+        changeColorSuccess={changeColorSuccess}
+        changeColorSecondary={changeColorSecondary}
+      />
+      <Alert alert={alert} />
+      {/* <Routes> */}
+      {/* <Route
             exact
             path="/"
             element={
@@ -89,11 +89,16 @@ function App() {
                 heading="Enter Your Text Here"
                 mode={mode}
               />
-            }></Route>
-
-          <Route exact path="/about" element={<About />}></Route>
-        </Routes>
-      </Router>
+            }></Route> */}
+      {/* <Route exact path="/about" element={<About />}></Route>
+        </Routes> */}
+      {/* </Router> */}
+      <TextForm
+        showAlert={showAlert}
+        heading="Enter Your Text Here"
+        mode={mode}
+      />
+      {/* <About /> */}
     </>
   );
 }
