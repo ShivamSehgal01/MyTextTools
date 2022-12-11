@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MyTextTools/static/css/main.e5ed3374.css",
+    "main.js": "/MyTextTools/static/js/main.3a0f922e.js",
+    "static/js/787.28cb0dcd.chunk.js": "/MyTextTools/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/MyTextTools/index.html",
+    "main.e5ed3374.css.map": "/MyTextTools/static/css/main.e5ed3374.css.map",
+    "main.3a0f922e.js.map": "/MyTextTools/static/js/main.3a0f922e.js.map",
+    "787.28cb0dcd.chunk.js.map": "/MyTextTools/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5ed3374.css",
+    "static/js/main.3a0f922e.js"
+  ]
+}
